@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <title>redirector: Mappings</title>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/lib/angular.min.js"></script>
+    <script type="text/javascript" src="/js/controller/AppController.js"></script>
+</head>
+
+<body ng-controller="AppController">
+
+<h1>Mappings:</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Alias</th>
+        <th>URL</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+           <td colspan="2">
+               Alias: <input type="text" ng-model="alias" />
+               URL: <input type="text" ng-model="url" />
+               <button ng-click="addMapping()">Add Mapping</button>
+           </td>
+        </tr>
+        <tr ng-repeat="mapping in mappings">
+            <td>{{ mapping.alias }}</td>
+            <td>{{ mapping.url }}</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
